@@ -5,7 +5,13 @@
       "Bash(git clone:*)",
       "Bash(git add:*)",
       "Bash(git rm:*)",
-      "Bash(git submodule add:*)"
+      "Bash(git submodule add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial setup: Octopus CONNECT Review Tool\n\nThis tool helps managers craft comprehensive CONNECT performance reviews \nusing Claude Code. Key features:\n\n- Interactive interview process via /connect-interview command\n- Templates for CONNECT questions (placeholder, to be provided)\n- Integration with Octopus People repo for role definitions\n- Git-ignored employee data for privacy\n- Structured inputs and outputs workflow\n\nThe tool is designed to be reusable by any manager at Octopus.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(gh repo create:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
