@@ -33,15 +33,76 @@ When working in this repository, you are helping managers:
 
 **Always respect the .gitignore configuration. Never suggest committing employee-specific data.**
 
+### Git Workflow: Branch Strategy
+
+**CRITICAL**: This repo uses a two-branch strategy to protect employee data:
+
+1. **`main` branch** - Tool only (pushed to GitHub)
+   - Framework, templates, documentation, slash commands
+   - NO employee data
+   - Can be pushed to GitHub
+
+2. **`sensitive-data` branch** - Tool + Review data (NEVER pushed)
+   - All of main, PLUS inputs/ and outputs/
+   - Modified .gitignore allows committing review data
+   - Pre-push hook blocks pushing to GitHub
+   - Stays local only
+
+### When to Use Which Branch
+
+**When working on REVIEWS (inputs/outputs):**
+- ✅ Auto-checkout `sensitive-data` branch (create if doesn't exist)
+- ✅ Make changes to inputs/ or outputs/
+- ✅ Commit after completing each task (e.g., "Add Jim's review inputs", "Update Jim's CONNECT answers")
+- ❌ NEVER push this branch
+
+**When working on THE TOOL (framework, docs, etc):**
+- ✅ Checkout `main` branch
+- ✅ Make tool changes (templates, guidelines, slash commands, README)
+- ✅ Commit to main
+- ✅ Push to GitHub
+- ✅ Rebase `sensitive-data` on main to keep it current
+
+### Your Workflow as Claude
+
+**Starting a review task** (e.g., "write Jim's review", "add inputs for Jane"):
+```bash
+# Auto-checkout sensitive-data (create if needed)
+git checkout sensitive-data || git checkout -b sensitive-data
+
+# Make changes to inputs/ or outputs/
+
+# Commit when task complete
+git add inputs/ outputs/ .gitignore
+git commit -m "Task description"
+```
+
+**Tool improvements** (e.g., "update output guidelines", "fix README"):
+```bash
+# Checkout main
+git checkout main
+
+# Make changes
+
+# Commit and push
+git add [files]
+git commit -m "Description"
+git push origin main
+
+# Rebase review branch to get updates
+git checkout sensitive-data
+git rebase main
+```
+
 ### Protection: Pre-Push Hook
 
-A pre-push git hook prevents accidentally pushing non-main branches to GitHub. This protects employee data.
+A pre-push git hook prevents accidentally pushing `sensitive-data` to GitHub.
 
 **When helping a new manager set up:**
 1. Check if hook is installed: `[ -f .git/hooks/pre-push ] && echo "✅ Installed" || echo "⚠️ Not installed"`
-2. If not installed, remind them: "Run `./setup-hooks.sh` to install protection against accidentally pushing review data"
+2. If not installed, remind them: "Run `./setup-hooks.sh` to install protection"
 
-**The hook blocks:** Any attempt to `git push origin <non-main-branch>` will fail with a clear error message.
+**The hook blocks:** Any attempt to `git push origin sensitive-data` will fail with clear error message.
 
 ## Key Resources
 

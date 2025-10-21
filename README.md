@@ -108,19 +108,31 @@ See `framework/output-guidelines.md` for detailed formatting requirements.
 
 ## Important: Git and Privacy
 
-**The tool itself is checked into git. Employee data is NOT.**
+**This repo uses a two-branch strategy to protect employee data:**
 
-### Committed to Git (Safe)
-- Tool structure: README, framework, slash commands
+### Branch Strategy
+
+**`main` branch** (pushed to GitHub):
+- Tool structure: README, framework, slash commands, documentation
 - `framework/octopus-people/` - Public organizational data
 - Example template at `inputs/employee-name/`
+- ❌ NO employee review data
 
-### Git Ignored (Never Committed)
-- `inputs/*/` except the example template
-- `outputs/` - All generated reviews
-- Any real employee data
+**`sensitive-data` branch** (local only, NEVER pushed):
+- Everything from main, PLUS your actual review data
+- `inputs/[employee-name]/` - Your notes and materials
+- `outputs/[employee-name].md` - Generated reviews
+- ✅ Versioned locally via git for safety
+- 🛑 Blocked from pushing to GitHub by pre-push hook
 
-Check `.gitignore` to see the full configuration.
+### How It Works
+
+1. **Install protection**: Run `./setup-hooks.sh` after cloning (one-time setup)
+2. **Work on reviews**: Claude automatically uses `sensitive-data` branch
+3. **Tool updates**: Pulled from `main` branch on GitHub
+4. **Your data**: Safe on local `sensitive-data` branch, never pushed
+
+The pre-push hook ensures you cannot accidentally push review data to GitHub.
 
 ## Supported Roles
 
