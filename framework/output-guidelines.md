@@ -153,10 +153,15 @@ Located in `framework/octopus-people/Engineering/Software-Engineering/`:
 - **L5**: Principal Software Engineer (`L5-Principal-Software-Engineer.md`)
 - **L6**: Senior Principal Software Engineer (`L6-Senior-Principal-Software-Engineer.md`)
 
+### Leadership Competencies
+- `framework/octopus-people/Leadership.md` - **Leadership competencies apply to ALL roles, especially L4+ (Lead, Principal, Senior Principal, Managers, etc.)**
+  - **CRITICAL**: Reviews for L4+ roles should include direct quotations from Leadership.md where relevant
+  - Leadership capabilities include: influencing without authority, building relationships across teams, strategic thinking, driving change, developing others, etc.
+  - These are NOT just for management roles - technical leadership at L4+ requires many of these same capabilities
+
 ### Other Useful Context
 - `framework/octopus-people/Everyone.md` - Core values and expectations for all Octopus employees
 - `framework/octopus-people/Engineering/Levels-Maturity-And-Performance-Reviews.md` - Context on levels and reviews
-- `framework/octopus-people/Leadership.md` - Additional context for management roles
 
 ## Iterative Refinement
 
