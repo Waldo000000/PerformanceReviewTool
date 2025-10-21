@@ -1,0 +1,3 @@
+[submodule "octopus-people"]
+	path = octopus-people
+	url = https://github.com/octopusdeploy/people.git
