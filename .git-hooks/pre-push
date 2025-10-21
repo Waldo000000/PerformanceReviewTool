@@ -1,0 +1,38 @@
+#!/bin/bash
+# Pre-push hook to prevent pushing non-main branches to origin (GitHub)
+# This protects employee review data from accidentally being pushed to GitHub
+
+# Get the remote name being pushed to
+remote="$1"
+
+# Only check pushes to origin (GitHub)
+if [ "$remote" != "origin" ]; then
+    exit 0
+fi
+
+# Read the branches being pushed from stdin
+while read local_ref local_sha remote_ref remote_sha
+do
+    # Extract branch name from ref (refs/heads/branch-name -> branch-name)
+    branch=$(echo "$local_ref" | sed 's/refs\/heads\///')
+
+    # Allow pushing main
+    if [ "$branch" = "main" ]; then
+        continue
+    fi
+
+    # Block pushing any other branch
+    echo ""
+    echo "🛑 BLOCKED: Cannot push branch '$branch' to origin (GitHub)"
+    echo ""
+    echo "Only the 'main' branch can be pushed to GitHub."
+    echo "Review branches (like '2025H1-reviews') contain employee data"
+    echo "and should stay local or be backed up elsewhere."
+    echo ""
+    echo "To backup review branches, use:"
+    echo "  git bundle create ~/review-backups/$branch-\$(date +%Y%m%d).bundle $branch"
+    echo ""
+    exit 1
+done
+
+exit 0

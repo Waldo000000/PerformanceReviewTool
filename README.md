@@ -30,7 +30,13 @@ This tool helps managers:
 
 ### First Time Setup
 
-1. **Update Octopus People data** (optional, already cloned):
+1. **Install git hooks** (protects employee data from being pushed to GitHub):
+   ```bash
+   ./setup-hooks.sh
+   ```
+   This prevents accidentally pushing review branches to GitHub. Only `main` branch can be pushed.
+
+2. **Update Octopus People data** (optional, already cloned):
    ```bash
    cd framework/octopus-people
    git pull origin main
@@ -38,7 +44,7 @@ This tool helps managers:
    ```
    See [UPDATE_OCTOPUS_PEOPLE.md](UPDATE_OCTOPUS_PEOPLE.md) for details.
 
-2. **Start Claude Code** in this directory:
+3. **Start Claude Code** in this directory:
    ```bash
    claude
    ```

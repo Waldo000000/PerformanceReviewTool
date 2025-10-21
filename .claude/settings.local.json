@@ -12,7 +12,11 @@
       "Bash(git push:*)",
       "Bash(git commit:*)",
       "Bash(git pull:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "WebFetch(domain:docs.github.com)",
+      "Bash(chmod:*)",
+      "Bash(./setup-hooks.sh)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []

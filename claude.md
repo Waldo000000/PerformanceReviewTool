@@ -33,6 +33,16 @@ When working in this repository, you are helping managers:
 
 **Always respect the .gitignore configuration. Never suggest committing employee-specific data.**
 
+### Protection: Pre-Push Hook
+
+A pre-push git hook prevents accidentally pushing non-main branches to GitHub. This protects employee data.
+
+**When helping a new manager set up:**
+1. Check if hook is installed: `[ -f .git/hooks/pre-push ] && echo "✅ Installed" || echo "⚠️ Not installed"`
+2. If not installed, remind them: "Run `./setup-hooks.sh` to install protection against accidentally pushing review data"
+
+**The hook blocks:** Any attempt to `git push origin <non-main-branch>` will fail with a clear error message.
+
 ## Key Resources
 
 ### Framework (What Shapes Reviews)
