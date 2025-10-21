@@ -6,7 +6,7 @@ You are helping a manager at Octopus Deploy craft a CONNECT performance review t
 
 ## Your Goal
 
-Conduct a thoughtful interview that gathers all the information needed to create review outputs that satisfy `templates/output-guidelines.md`.
+Conduct a thoughtful interview that gathers all the information needed to create review outputs that satisfy `framework/output-guidelines.md`.
 
 The interview questions should be designed to elicit:
 - Concrete examples with context and impact
@@ -17,11 +17,10 @@ The interview questions should be designed to elicit:
 ## Context to Read First
 
 Before starting the interview, read:
-- **Output Guidelines**: `templates/output-guidelines.md` - What the final outputs must look like
-- **CONNECT Template**: `templates/connect-template.md` - Questions that need answering
-- **Role Definition**: Identify the employee's role and read from `octopus-people/Engineering/`
-- **Employee Inputs**: Read all files in `employees/{employee-name}/`
-- **Braindump**: Read `braindump-{employee-name}.md` if it exists
+- **Output Guidelines**: `framework/output-guidelines.md` - What the final outputs must look like
+- **CONNECT Template**: `framework/connect-template.md` - Questions that need answering
+- **Role Definition**: Identify the employee's role and read from `framework/octopus-people/Engineering/`
+- **Employee Inputs**: Read all files in `inputs/{employee-name}/`
 
 ## Interview Process
 
@@ -55,15 +54,16 @@ Ask questions designed to gather the information needed for `output-guidelines.m
 - Reference specific role competencies to structure thinking
 - Take notes as the conversation progresses
 
-### Step 3: Generate Outputs
+### Step 3: Generate Output
 
-Create these files in `output/{employee-name}/`, following `templates/output-guidelines.md` exactly:
+Create `outputs/{employee-name}.md`, following `framework/output-guidelines.md` exactly:
 
-1. **connect-review.md** - Complete answers to CONNECT template questions
-2. **role-framing.md** - Performance mapped to role competencies
-3. **goals.md** - 3-5 actionable goals for next 6-12 months
+This single file contains:
+- Complete answers to all CONNECT template questions
+- Role framing integrated naturally (using blockquotes from role definitions)
+- Goals appearing inline within the "What could they focus on to grow further?" section
 
-**Critical**: Every strength and growth area must follow the blockquote format with level indicators and "how" guidance as specified in `output-guidelines.md`.
+**Critical**: Every strength and growth area must follow the blockquote format with level indicators and "how" guidance as specified in `framework/output-guidelines.md`.
 
 ### Step 4: Review and Iterate
 - Summarize what you've created
@@ -83,6 +83,6 @@ Create these files in `output/{employee-name}/`, following `templates/output-gui
 Ask the manager:
 1. What is the employee's name?
 2. What is their role/level?
-3. Have they already created the employee directory and added inputs?
+3. Have they already created their input directory (`inputs/[employee-name]/`) and added materials?
 
 Then begin the interview process.

@@ -22,47 +22,33 @@ When working in this repository, you are helping managers:
 **EXTREMELY IMPORTANT**: This tool handles sensitive employee performance data.
 
 ### Git-Ignored (NEVER committed)
-- `employees/*/` - All employee-specific inputs and notes
-- `braindump-*.md` - Manager's rough notes and thoughts
-- `output/` - Generated review documents
-- `notes/` - Any other personal notes
+- `inputs/*/` - All employee-specific inputs and notes (including braindumps)
+- `outputs/` - Generated review documents
 
 ### Committed to Git (Safe)
-- Tool structure, templates, documentation
-- `octopus-people/` - Public role definitions
+- Tool structure, framework, documentation
+- `framework/octopus-people/` - Public role definitions
 - Slash commands and workflows
+- Example input template (`inputs/employee-name/` with braindump.md)
 
 **Always respect the .gitignore configuration. Never suggest committing employee-specific data.**
 
 ## Key Resources
 
-### Templates and Guidelines
-- **`templates/output-guidelines.md`** - **CRITICAL**: Defines what good outputs look like (formatting, structure, requirements)
-- `templates/connect-template.md` - Questions managers need to answer in CONNECT reviews
-- `templates/roles/README.md` - Guide to available role definitions
+### Framework (What Shapes Reviews)
+- **`framework/output-guidelines.md`** - **CRITICAL**: Defines what good outputs look like (formatting, structure, requirements)
+- `framework/connect-template.md` - Questions managers need to answer in CONNECT reviews
+- `framework/octopus-people/` - Role definitions and organizational context
 
-**Always reference `output-guidelines.md` when creating or refining review outputs, regardless of workflow.**
-
-### Role Definitions
-Located in `octopus-people/Engineering/`:
-- **Engineering Management**: L4 (EM), L5 (Senior EM), L6 (Director)
-- **Software Engineering IC**: L1-L6 (Graduate through Senior Principal Engineer)
-
-Also reference:
-- `octopus-people/Everyone.md` - Core Octopus values
-- `octopus-people/Engineering/Levels-Maturity-And-Performance-Reviews.md` - Context on levels
+**Always reference `framework/output-guidelines.md` when creating or refining review outputs, regardless of workflow.**
 
 ### Employee Inputs
-Each employee has a directory: `employees/[employee-name]/`
-- May contain: 1:1 notes, project notes, peer feedback, etc.
-- File naming is flexible - managers organize as they prefer
-- All files in these directories are git-ignored
+Each employee has a directory: `inputs/[employee-name]/`
+- Contains: braindump.md (see template), 1:1 notes, project notes, peer feedback, etc.
+- File naming is flexible - managers organize however works for them
+- All files in `inputs/` are git-ignored
 
-### Braindump Files
-- Format: `braindump-[employee-name].md`
-- Manager's unstructured thoughts and quick notes
-- Stream-of-consciousness, pre-interview jottings
-- Also git-ignored
+The example `inputs/employee-name/braindump.md` shows managers where to start adding thoughts.
 
 ## How Managers Work with This Tool
 
@@ -97,21 +83,21 @@ Each employee has a directory: `employees/[employee-name]/`
 
 ### Key Practices for Iterative Work
 
-- **Always read existing outputs first** - Check `output/[employee-name]/` to see what's already been written
+- **Always read existing outputs first** - Check `outputs/[employee-name].md` to see what's already been written
 - **Maintain consistency** - Keep format, tone, and structure consistent with existing content
 - **Update incrementally** - Add to or refine existing outputs rather than regenerating from scratch
 - **Track completeness** - Note which CONNECT template questions still need attention
 - **Follow output-guidelines.md** - Regardless of workflow, all outputs must follow the guidelines
 
-### Output Files
+### Output File
 
-Generate/maintain these in `output/[employee-name]/`:
+Generate/maintain a single file: `outputs/[employee-name].md`
 
-1. **connect-review.md** - Complete answers to CONNECT template questions
-2. **role-framing.md** - Performance mapped to role competencies
-3. **goals.md** - 3-5 actionable goals for next 6-12 months
+This file contains complete answers to all CONNECT template questions, with:
+- Role framing integrated naturally (using blockquotes from role definitions)
+- Goals appearing inline within the "What could they focus on to grow further?" section
 
-All outputs must follow the format specified in `templates/output-guidelines.md`.
+All outputs must follow the format specified in `framework/output-guidelines.md`.
 
 ## Tone and Approach
 
@@ -147,8 +133,8 @@ The tool is conversational and flexible. Managers work however suits them.
 
 ## Updates and Maintenance
 
-- **Octopus People**: Managers can update with `cd octopus-people && git pull origin main && cd ..`
-- **Template**: Managers update `templates/connect-template.md` as CONNECT evolves
+- **Octopus People**: Managers can update with `cd framework/octopus-people && git pull origin main && cd ../..`
+- **Template**: Managers update `framework/connect-template.md` as CONNECT evolves
 - **Tool Itself**: This repo is version-controlled and can be enhanced over time
 
 ## Remember

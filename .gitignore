@@ -1,15 +1,11 @@
 # Employee-specific data - NEVER commit this!
-employees/*/
 
-# Braindump files
-braindump-*.md
+# All employee input directories (except the example template)
+inputs/*/
+!inputs/employee-name/
 
-# Generated reviews
-output/
-
-# Local notes
-notes/
+# All generated reviews
+outputs/*
 
 # Keep directory structure
-!employees/.gitkeep
-!output/.gitkeep
+!outputs/.gitkeep

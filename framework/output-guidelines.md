@@ -6,13 +6,15 @@ This document defines what good CONNECT review outputs look like. Use these guid
 
 **Every strength and growth area must be explicitly grounded in Octopus People role definitions, with concrete examples and actionable guidance.**
 
-## Output Files
+## Output Format
 
-For each employee, create in `output/{employee-name}/`:
+For each employee, create a single file: `outputs/[employee-name].md`
 
-1. **connect-review.md** - Complete answers to all CONNECT template questions
-2. **role-framing.md** - Performance mapped to role competencies
-3. **goals.md** - 3-5 actionable goals for next 6-12 months
+This file contains complete answers to all CONNECT template questions. Within those answers:
+- **Role framing** is integrated naturally (using blockquotes from role definitions)
+- **Goals** appear inline within the "What could they focus on to grow further?" section (typically as the final part of that answer)
+
+**One file, not multiple files.** Everything the manager needs is in one place.
 
 ## Critical Formatting Requirements
 
@@ -128,7 +130,32 @@ When conducting interviews (or having iterative conversations), ask questions th
 
 ## Template Adherence
 
-When answering questions from `templates/connect-template.md`, ensure every strength and growth area follows these formatting rules. The direct quotes ground feedback in documented expectations, and the "how" guidance makes growth areas actionable while respecting employee autonomy.
+When answering questions from `framework/connect-template.md`, ensure every strength and growth area follows these formatting rules. The direct quotes ground feedback in documented expectations, and the "how" guidance makes growth areas actionable while respecting employee autonomy.
+
+## Available Role Definitions
+
+Role definitions are sourced from `framework/octopus-people/Engineering/`.
+
+### Engineering Management
+Located in `framework/octopus-people/Engineering/Engineering-Management/`:
+- **L4**: Engineering Manager (`L4-Engineering-Manager.md`)
+- **L5**: Senior Engineering Manager (`L5-Senior-Engineering-Manager.md`)
+- **L6**: Director of Engineering (`L6-Director-of-Engineering.md`)
+
+### Software Engineering (IC)
+Located in `framework/octopus-people/Engineering/Software-Engineering/`:
+- **L1.0**: Graduate Software Engineer (`L1.0-Graduate-Software-Engineer.md`)
+- **L1**: Junior Software Engineer (`L1-Junior-Software-Engineer.md`)
+- **L2**: Software Engineer (`L2-Software-Engineer.md`)
+- **L3**: Senior Software Engineer (`L3-Senior-Software-Engineer.md`)
+- **L4**: Lead Software Engineer (`L4-Lead-Software-Engineer.md`)
+- **L5**: Principal Software Engineer (`L5-Principal-Software-Engineer.md`)
+- **L6**: Senior Principal Software Engineer (`L6-Senior-Principal-Software-Engineer.md`)
+
+### Other Useful Context
+- `framework/octopus-people/Everyone.md` - Core values and expectations for all Octopus employees
+- `framework/octopus-people/Engineering/Levels-Maturity-And-Performance-Reviews.md` - Context on levels and reviews
+- `framework/octopus-people/Leadership.md` - Additional context for management roles
 
 ## Iterative Refinement
 
