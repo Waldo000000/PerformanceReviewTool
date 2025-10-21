@@ -19,7 +19,7 @@ Examples of what to add:
 
 ## Privacy
 
-**Everything in `inputs/` is git-ignored.** None of these files will ever be committed to version control.
+**Everything else in `inputs/` should be git-ignored**. None of those files should be committed to version control.
 
 ---
 
