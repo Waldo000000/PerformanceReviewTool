@@ -134,14 +134,6 @@ See `framework/output-guidelines.md` for detailed formatting requirements.
 
 The pre-push hook ensures you cannot accidentally push review data to GitHub.
 
-## Supported Roles
-
-Currently configured for:
-- **Engineering Management**: L4, L5, L6 (Director)
-- **Software Engineering IC**: L1-L6 (Graduate through Senior Principal)
-
-Role definitions are pulled from `framework/octopus-people/Engineering/`.
-
 ## Key Files
 
 - **`framework/output-guidelines.md`** - Critical reference for what outputs should look like
