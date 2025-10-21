@@ -1,4 +1,4 @@
-# Octopus CONNECT Review Tool
+# [🚧 Experimental] Octopus CONNECT Review Tool
 
 A Claude Code-powered tool for crafting thoughtful, comprehensive performance reviews (CONNECT reviews) at Octopus Deploy.
 
