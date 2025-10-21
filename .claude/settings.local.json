@@ -16,7 +16,9 @@
       "WebFetch(domain:docs.github.com)",
       "Bash(chmod:*)",
       "Bash(./setup-hooks.sh)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(git checkout:*)",
+      "Bash(git rebase:*)"
     ],
     "deny": [],
     "ask": []
