@@ -36,9 +36,12 @@ When working in this repository, you are helping managers:
 
 ## Key Resources
 
-### Templates
+### Templates and Guidelines
+- **`templates/output-guidelines.md`** - **CRITICAL**: Defines what good outputs look like (formatting, structure, requirements)
 - `templates/connect-template.md` - Questions managers need to answer in CONNECT reviews
 - `templates/roles/README.md` - Guide to available role definitions
+
+**Always reference `output-guidelines.md` when creating or refining review outputs, regardless of workflow.**
 
 ### Role Definitions
 Located in `octopus-people/Engineering/`:
@@ -61,21 +64,54 @@ Each employee has a directory: `employees/[employee-name]/`
 - Stream-of-consciousness, pre-interview jottings
 - Also git-ignored
 
-## Main Workflow
+## How Managers Work with This Tool
 
-Managers use the `/connect-interview [employee-name]` command to start the review process:
+**IMPORTANT**: Managers are busy and work on reviews iteratively over days or weeks, not in one sitting. Support flexible, re-entrant workflows.
 
-1. **Gather Context**: Read template, role definition, employee inputs, braindump
-2. **Interactive Interview**: Ask thoughtful questions to help crystallize the manager's thinking
-3. **Generate Outputs**: Create structured review documents in `output/[employee-name]/`
+### Workflow Patterns to Support
+
+1. **Structured Interview** (optional starting point)
+   - Manager runs `/connect-interview [employee-name]`
+   - You conduct comprehensive interview, then generate initial outputs
+   - Good for getting started from scratch
+
+2. **Incremental Additions** (most common)
+   - Manager drops into Claude with one thought: "Jane did great work on the API redesign"
+   - You read existing outputs (if any), add/update based on new info
+   - Manager quits, comes back tomorrow with another thought
+   - You continue building/refining the review
+
+3. **Focused Refinement**
+   - "Let's work on the technical excellence section"
+   - You focus on one area, asking targeted questions
+   - Update just that section
+
+4. **Gap Analysis**
+   - "Review what I have so far and suggest what's missing"
+   - You analyze existing outputs against CONNECT template and output guidelines
+   - Identify gaps, suggest areas to discuss
+
+5. **Direct Editing**
+   - "The mentoring section needs more specific examples"
+   - You refine existing content while maintaining format from output-guidelines.md
+
+### Key Practices for Iterative Work
+
+- **Always read existing outputs first** - Check `output/[employee-name]/` to see what's already been written
+- **Maintain consistency** - Keep format, tone, and structure consistent with existing content
+- **Update incrementally** - Add to or refine existing outputs rather than regenerating from scratch
+- **Track completeness** - Note which CONNECT template questions still need attention
+- **Follow output-guidelines.md** - Regardless of workflow, all outputs must follow the guidelines
 
 ### Output Files
 
-Generate these in `output/[employee-name]/`:
+Generate/maintain these in `output/[employee-name]/`:
 
 1. **connect-review.md** - Complete answers to CONNECT template questions
 2. **role-framing.md** - Performance mapped to role competencies
 3. **goals.md** - 3-5 actionable goals for next 6-12 months
+
+All outputs must follow the format specified in `templates/output-guidelines.md`.
 
 ## Tone and Approach
 
@@ -87,26 +123,27 @@ When helping with reviews:
 - **Clear and direct** - Avoid corporate jargon
 - **Empathetic** - Remember there's a real person being reviewed
 
-## Interview Best Practices
+## Working with Managers
 
-During `/connect-interview`:
-- Ask open-ended questions
-- Probe for specific examples and impact
-- Reference role competencies to structure thinking
-- Help managers articulate vague impressions
-- Take notes as the conversation progresses
-- Synthesize multiple data points (1:1 notes, projects, feedback)
-- Ensure balanced coverage (don't just focus on recent events)
+Whether in a structured interview, incremental conversation, or refinement session:
 
-## Additional Commands
+- **Ask open-ended questions** - Help them think through their assessments
+- **Probe for specifics** - Get concrete examples and impact
+- **Reference role competencies** - Ground discussions in Octopus People definitions
+- **Help articulate vague impressions** - Turn "they're good at X" into specific evidence
+- **Synthesize multiple sources** - Connect 1:1 notes, projects, feedback into coherent narrative
+- **Ensure balanced coverage** - Don't just focus on recent events
+- **Track what's needed** - Know what information you still need for complete outputs
 
-Managers might also ask for help with:
-- Understanding role definitions
-- Structuring their input notes
-- Reviewing and refining generated outputs
-- Comparing performance across role levels
+## Commands and Interactions
 
-Always be helpful, but remember the primary workflow is `/connect-interview`.
+- **`/connect-interview [employee-name]`** - Start structured interview (one option for getting started)
+- **Direct conversation** - Manager can just talk to you about the employee, you update outputs accordingly
+- **"Review what I have"** - Analyze completeness, suggest gaps
+- **"Help me with [section]"** - Focus on specific areas
+- **"What does [role capability] mean?"** - Explain role definitions
+
+The tool is conversational and flexible. Managers work however suits them.
 
 ## Updates and Maintenance
 
