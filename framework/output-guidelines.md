@@ -11,6 +11,7 @@ This document defines what good CONNECT review outputs look like. Use these guid
 For each employee, create a single file: `outputs/[employee-name].md`
 
 This file contains complete answers to all CONNECT template questions. Within those answers:
+- **Section headers must match the template questions exactly** (verbatim from `framework/connect-template.md`)
 - **Role framing** is integrated naturally (using blockquotes from role definitions)
 - **Goals** appear inline within the "What could they focus on to grow further?" section (typically as the final part of that answer)
 

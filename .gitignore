@@ -2,7 +2,7 @@
 
 # All employee input directories (except the example template)
 inputs/*/
-!inputs/employee-name/
+!inputs/employee-name/braindump.md
 
 # All generated reviews
 outputs/*
