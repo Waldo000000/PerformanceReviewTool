@@ -1,7 +1,7 @@
 # Employee-specific data - NEVER commit this!
 
 # All employee input directories (except the example template)
-inputs/*/
+inputs/*
 !inputs/employee-name/braindump.md
 
 # All generated reviews
