@@ -115,11 +115,19 @@ A pre-push git hook prevents accidentally pushing `sensitive-data` to GitHub.
 
 ### Employee Inputs
 Each employee has a directory: `inputs/[employee-name]/`
-- Contains: braindump.md (see template), 1:1 notes, project notes, peer feedback, etc.
-- File naming is flexible - managers organize however works for them
-- All files in `inputs/` are git-ignored
 
-The example `inputs/employee-name/braindump.md` shows managers where to start adding thoughts.
+**File Organization:**
+- **Dated files preferred for new information**: `yyyy-mm-dd-descriptive-topic.md` (e.g., `2025-01-28-api-redesign-project.md`)
+  - Makes chronological scanning easy for managers
+  - Creates clear audit trail of when information was captured
+- **Edit existing files when expanding on captured topics**
+  - Keeps related information together
+  - Avoids fragmentation
+- **`braindump.md`** - Example template showing where to start
+
+All files in `inputs/` are git-ignored (never committed).
+
+**See "Your Information Processing Workflow" section below for detailed guidance on when to create new files vs. edit existing ones.**
 
 ## How Managers Work with This Tool
 
@@ -169,6 +177,99 @@ This file contains complete answers to all CONNECT template questions, with:
 - Goals appearing inline within the "What could they focus on to grow further?" section
 
 All outputs must follow the format specified in `framework/output-guidelines.md`.
+
+## Your Information Processing Workflow
+
+**CRITICAL**: When managers give you ANY kind of feedback, follow this workflow to ensure information persists across sessions.
+
+### Core Principle: Extract → Persist → Update
+
+All feedback should be captured in inputs before updating outputs. This prevents information loss when outputs are regenerated in future sessions.
+
+**The Workflow:**
+1. Manager gives feedback (new info, editorial direction, structural change, tone guidance)
+2. You ask clarifying questions to extract the underlying information or intent
+3. You persist that understanding to `inputs/[employee]/`
+4. You update `outputs/[employee].md` using the persisted context
+
+### File Naming Strategy
+
+**New information** → Create new dated file:
+- Format: `inputs/[employee]/yyyy-mm-dd-descriptive-topic.md`
+- Example: `inputs/jane-smith/2025-01-28-api-redesign-project.md`
+- Makes chronological scanning easy for managers
+
+**Clarifying existing information** → Edit the existing file:
+- If expanding on something already captured in `2025-01-15-mentoring.md`, add to that file
+- Keeps related information together
+- Avoids fragmentation
+
+**Decision logic:**
+- New topic/project/observation? → New dated file
+- Adding detail to existing topic? → Edit existing file
+- Ambiguous? → Ask the manager
+
+### Examples: Extracting Information from Feedback
+
+**Scenario 1: Editorial Feedback**
+- Manager: "Make the mentoring section more specific"
+- You: "What specific mentoring work should I highlight? Are there examples or outcomes I'm missing?"
+- Manager: "She ran weekly 1:1s with Sarah for 6 months, helped her ship her first major feature"
+- You persist to: `inputs/jane-smith/2025-01-28-mentoring-sarah.md`
+  ```markdown
+  # Mentoring Sarah
+
+  - 6-month weekly 1:1 cadence with Sarah (junior engineer)
+  - Guided her through first major feature delivery
+  - [Additional context from conversation]
+  ```
+- Then update output with that specificity
+
+**Scenario 2: Structural Feedback**
+- Manager: "The API redesign should be in technical excellence, not collaboration"
+- You: "Got it - what made this primarily a technical achievement rather than collaborative?"
+- Manager: "The win was the architecture for extensibility, not the teamwork"
+- You persist to: `inputs/jane-smith/2025-01-15-api-redesign-project.md` (edit existing)
+  ```markdown
+  # API Redesign Project
+
+  ...existing content...
+
+  ## Key strength: Technical/Architectural
+  The primary achievement was designing an extensible architecture that enables
+  future feature development without core refactoring.
+  ```
+- Then restructure output accordingly
+
+**Scenario 3: Tone/Voice Feedback**
+- Manager: "This sounds too corporate"
+- You: "What's the more authentic way to describe this? What's the real story?"
+- Manager: "Just say she jumped in and fixed the broken deployment pipeline when everyone was panicking"
+- You persist to: `inputs/jane-smith/2025-01-28-deployment-pipeline-fix.md`
+  ```markdown
+  # Deployment Pipeline Emergency Fix
+
+  During Q3 production crisis, Jane took initiative to fix broken deployment
+  pipeline while team was in crisis mode. Unblocked everyone.
+
+  Tone: Direct, action-oriented. Emphasize initiative and impact under pressure.
+  ```
+- Then rewrite with that voice
+
+**Scenario 4: New Factual Information**
+- Manager: "Jane led the Q4 security audit response"
+- You: "Tell me more - what did that involve and what was the outcome?"
+- Manager: "She coordinated with InfoSec, updated 15 services, delivered ahead of deadline"
+- You persist to: `inputs/jane-smith/2025-01-28-q4-security-audit.md`
+- Then update output
+
+### Why This Matters
+
+Without persisted inputs, future conversations would lose context:
+- Session 1: "Make mentoring section more specific" → You edit output
+- Session 2: "Add info about Q4 project" → You regenerate sections, lose Session 1 specificity
+
+With persisted inputs, all context is preserved and feeds future output updates.
 
 ## Tone and Approach
 
